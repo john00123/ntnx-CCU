@@ -1,0 +1,143 @@
+html {
+  font: 400 14px/10px "nutanix_soft", san-serif;
+  text-rendering: optimizeSpeed;
+  text-rendering: optimizeLegibility;
+  text-rendering: geometricPrecision;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: "";
+  height: 50px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 20px;
+  background-color: #F3F4F5;
+  border-bottom: 1px solid #DBDFE1;
+  margin-bottom: 60px;
+}
+
+.close {
+  height: 14px;
+  width: 14px;
+  box-sizing: border-box;
+  display: block;
+  position: relative;
+}
+
+.close::before {
+  content: '';
+  top: -1px;
+  border-radius: 2px;
+  position: absolute;
+  background-color: #6F787E;
+  left: calc(50% - 1px);
+  height: 16px;
+  width: 2px;
+  box-sizing: border-box;
+  transform: rotate(45deg);
+}
+
+.close::after {
+  content: '';
+  border-radius: 2px;
+  top: -1px;
+  left: calc(50% - 1px);
+  height: 16px;
+  width: 2px;
+  box-sizing: border-box;
+  transform: rotate(-45deg);
+  position: absolute;
+  background-color: #6F787E;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: 200;
+  line-height: 0.7;
+}
+
+h5 {
+  font-size: 10px;
+  line-height: 0.7;
+  font-weight: 500;
+  color: #7C8D9F;
+}
+
+.separator {
+  height: 1px;
+  width: 40px;
+  box-sizing: border-box;
+  margin: 30px auto;
+  background-color: #F3F4F5;
+}
+
+.primary {
+  -webkit-appearance: none;
+  border: none;
+  background-color: #26bbf0;
+  color: white;
+  font: 500 14px/10px "nutanix_soft", san-serif;
+  font-size: 12px;
+  height: 30px;
+  padding: 0 15px;
+  border-radius: 4px;
+}
+
+.data-block {
+  height: 500px;
+  width: 400px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 60px;
+}
+
+.data-block h1 {
+  margin-bottom: 80px;
+}
+
+.data-block h5 {
+  margin-top: 20px;
+}
+
+.data-block .img-license {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 120px;
+  width: 180px;
+  box-sizing: border-box;
+  font-size: 18px;
+  color: #6F787E;
+  background-image: url("/img/license.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.data-block .img-license code {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  margin: 15px 0 0 25px;
+}
