@@ -6,12 +6,13 @@
 
 html {
   @include font;
-  overflow-x: hidden;
+
 }
 
 body {
   @include size(100%, 100%);
   @include flex(center, center, column);
+  overflow: hidden;
 }
 
 header{
@@ -20,7 +21,59 @@ header{
   padding: 0 20px;
   background-color: $background-color-3-old;
   border-bottom: 1px solid $border-color-2-old;
-  margin-bottom: 60px;
+}
+
+h1{
+  font-size: 30px;
+  font-weight: 200;
+  line-height: 0.7;
+}
+
+h5{
+  font-size: 10px;
+  line-height: 0.7;
+  font-weight: 500;
+  color: $font-color-3-old;
+}
+
+h3{
+  font-weight: 600;
+  font-size: 16px;
+  color: $font-color-2-old;
+}
+
+
+.primary{
+ -webkit-appearance: none;
+ @include primary-old;
+ padding: 0 15px;
+ height: 30px;
+}
+
+.secondary{
+  @include secondary-old;
+  margin-left: 10px;
+}
+
+.flow-options{
+  @include shadow;
+  border-radius: 25px;
+  padding: 5px 20px;
+  position: fixed;
+  bottom:50px;
+  border-top: 1px solid $border-color-3-old;
+  @include flex(center, space-between, row);
+  code:not(:last-child){
+    margin-right: 10px;
+    padding-right: 10px;
+    border-right: 1px solid $border-color-3-old;
+  }
+}
+
+
+
+select.primary{
+line-height: 18px;
 }
 
 .close{
@@ -51,18 +104,6 @@ header{
   }
 }
 
-h1{
-  font-size: 30px;
-  font-weight: 200;
-  line-height: 0.7;
-}
-
-h5{
-  font-size: 10px;
-  line-height: 0.7;
-  font-weight: 500;
-  color: $font-color-3-old;
-}
 
 .separator{
   @include size(1px, 40px);
@@ -70,23 +111,20 @@ h5{
   background-color: $background-color-3-old;
 }
 
-.primary{
--webkit-appearance: none;
-border: none;
-background-color: $blue-2-old;
-color:white;
-font: $h3;
-font-size: 12px;
-height: 30px;
-padding: 0 15px;
-border-radius: 4px;
-}
+.data-main-content{
+  @include flex(center, center, '');
+  height: calc(100vh - 50px);
 
+}
 
 .data-block{
   @include size(500px, 400px);
   @include flex(center, flex-start, column);
   padding: 60px;
+
+  &:nth-of-type(2){
+    border-left: 1px solid $border-color-3-old;
+  }
 
   h1{
     margin-bottom: 80px;
@@ -96,9 +134,10 @@ border-radius: 4px;
     margin-top: 20px;
   }
 
+
   .img-license{
     @include flex(center, center, column);
-    @include size(120px, 180px);
+    @include size(125px, 180px);
     font-size: 18px;
     color:$font-color-2-old;
     background-image: url('/img/license.svg');
@@ -112,6 +151,8 @@ border-radius: 4px;
       margin: 15px 0 0 25px;
     }
   }
+}
 
-
-  }
+.data-button-grouping{
+  @include flex(center, flex-start, row);
+}

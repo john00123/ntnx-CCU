@@ -10,23 +10,77 @@
   <link rel="stylesheet" href="css/style.css">
   <title>CCU</title>
 </head>
+<body>
+  <!-- header -->
   <header>
-    <h3>Title<h3>
+    <h3>Licensing<h3>
     <span data-close-popup class='close'><span>
   </header>
-<body>
+
+  <!-- controller -->
+  <div class='flow-options'>
+    <code>No add-ons</code>
+    <code>New node</code>
+    <code>New node</code>
+    <code>New node</code>
+  </div>
+
+  <!-- main container -->
+  <div class='data-main-content' >
+
+  <!-- license option -->
+    <div class='data-block'>
+      <h1> Acropolis Licensing</h1>
+      <div class='img-license'>
+        <code>PRO</code>
+      </div>
+
+      <h5>CCU EXPIRE ON DATE</h5>
+      <div class='separator'></div>
+
+      <div class='data-button-grouping'>
+
+        <select value="Two" class='primary' name="Upgrade">
+          <option selected disabled hidden> Upgrade </option>
+          <option hidden disabled>_________</option>
+
+          <option>Started</option>
+          <optgroup label="Expires 12/30/2018"></optgroup>
+          <option hidden disabled></option>
+
+          <option>Pro</option>
+          <optgroup label="Expires  12/30/2019"></optgroup>
+          <option hidden disabled></option>
+
+          <option>Ultimate</option>
+          <optgroup label="Expires 12/30/2021"></optgroup>
+
+        </select>
+
+        <button class='secondary'>
+          Upgrade
+        </button>
+      </div>
+    </div>
+
+    <!-- add-ons -->
+    <div class='data-block'>
+      <h1>Add-Ons</h1>
+      <div class='img-license'>
+        <code>ULTIMATE</code>
+      </div>
+      <h5>CCU EXPIRE ON DATE</h5>
+      <div class='separator'></div>
+      <button class='primary'>
+        Upgrade
+      </button>
+    </div>
+
+</div>
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="js/script.js" charset="utf-8"></script>
 
 </body>
-  <div class='data-block'>
-    <h1> Acropolis Licensing</h1>
-    <div class='img-license'>
-      <code>License</code>
-    </div>
-    <h5>CCU EXPIRE ON DATE</h5>
-    <div class='separator'></div>
-    <button class='primary'> Upgrade </button>
-  </div>
+
 </html>
