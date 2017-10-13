@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 119 132" style="enable-background:new 0 0 119 132;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#F5F6F7;}
+	.st1{fill:#FFFFFF;}
+	.st2{fill:none;stroke:#DBDFE1;stroke-width:2;}
+	.st3{fill:#F3F4F5;}
+	.st4{fill:none;stroke:#DBDFE1;}
+</style>
+<title>Asset 1</title>
+<g id="Layer_2">
+	<g id="crystal">
+		<g id="s">
+			<polygon class="st0" points="56,0 0,32 0,96 56,128 112,96 112,32 			"/>
+		</g>
+		<g id="c">
+			<polygon class="st1" points="63,5.2 8,36.6 8,99.4 63,130.9 118,99.4 118,36.6 			"/>
+			<polygon class="st2" points="63,5.2 8,36.6 8,99.4 63,130.9 118,99.4 118,36.6 			"/>
+		</g>
+		<g id="f">
+			<rect x="62.6" y="68" class="st3" width="1" height="54.1"/>
+			<rect x="38.8" y="27.1" transform="matrix(0.5 -0.866 0.866 0.5 -27.7739 61.3901)" class="st3" width="1" height="55.3"/>
+			<rect x="86.2" y="27.1" transform="matrix(0.5 0.866 -0.866 0.5 90.7689 -47.7144)" class="st3" width="1" height="55.3"/>
+			<polygon class="st4" points="63,13.6 15.5,40.8 15.5,95.2 63,122.4 110.5,95.2 110.5,40.8 			"/>
+		</g>
+	</g>
+</g>
+</svg>
