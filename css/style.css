@@ -60,6 +60,7 @@ h3 {
   background-color: #26bbf0;
   padding: 0 15px;
   height: 30px;
+  font-weight: 500;
 }
 
 .primary:hover {
@@ -180,6 +181,10 @@ select.primary {
 
 .data-block h5 {
   margin-top: 20px;
+}
+
+.data-block p {
+  font-size: 12px;
 }
 
 .data-block .img-license {
