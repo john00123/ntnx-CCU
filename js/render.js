@@ -31,7 +31,7 @@ $('.flow-options').find('code:eq(1)').click(function(){
   addonDropdownData();
   ycheck();
   $('.multi-button:eq(0)').append(`<div class='data-button-grouping alternative' style='margin-left:10px;'>
-    <kbd>Unused licenses</kbd>
+    <kbd>Unused Tokens</kbd>
     <select style='width:130px' class='secondary reclaim'>
     <option disabled selected>120000 CCU Available</option>
     <optgroup label=""></optgroup>
