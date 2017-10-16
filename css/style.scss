@@ -6,7 +6,6 @@
 
 html {
   @include font;
-
 }
 
 body {
@@ -16,7 +15,7 @@ body {
 }
 
 header{
-  @include flex(center, space-between,'');
+  @include flex(center, space-between,row);
   @include size( 50px, 100%);
   padding: 0 20px;
   background-color: $background-color-3-old;
@@ -34,6 +33,7 @@ h5{
   line-height: 0.7;
   font-weight: 500;
   color: $font-color-3-old;
+  text-transform: uppercase;
 }
 
 h3{
@@ -54,6 +54,7 @@ h3{
 .secondary{
   @include secondary-old;
   margin-left: 10px;
+  font-weight: 500;
 }
 
 .flow-options{
@@ -69,15 +70,43 @@ h3{
     padding-right: 10px;
     border-right: 1px solid $border-color-3-old;
   }
+  code{
+    &:hover{
+      color:$blue-2-old;
+      cursor: pointer;
+    }
+  }
 }
 
+.multi-button{
+  @include flex(center, center, row);
+}
 
+.icon-group{
+  @include flex(flex-start, center, row);
+  flex-wrap: wrap;
+}
 
 select.primary{
 line-height: 18px;
 color:transparent;
-min-width: 90px;
+width: 90px;
 outline: none;
+}
+
+
+select.secondary{
+-webkit-appearance:none;
+line-height: 18px;
+
+width: 90px;
+outline: none;
+@include secondary-old;
+color:transparent;
+&:hover{
+  color:transparent;
+  border-color: $border-color-2-old;
+}
 }
 
 .close{
@@ -126,7 +155,7 @@ outline: none;
   @include flex(center, flex-start, column);
   padding: 60px;
 
-  &:nth-of-type(2){
+  &:not(:nth-of-type(1)){
     border-left: 1px solid $border-color-3-old;
   }
 
@@ -158,7 +187,9 @@ outline: none;
       line-height: 1.2;
       text-align: center;
       letter-spacing: 2px;
-      margin: 12px 0 0 30px;
+      margin: 12px 0 0 25px;
+      text-transform: uppercase;
+      font-weight: 400;
     }
   }
 
@@ -168,14 +199,6 @@ outline: none;
       margin-top: 5px;
       margin-left: 10px;
       font-size: 16px;
-
-
-      // font-size: 12px;
-      // font-weight: 500;
-
-      // font-size: 14px;
-      // font-weight: 500;
-
       line-height: 1.2;
       width: 20px;
       text-align: center;
@@ -184,6 +207,61 @@ outline: none;
   }
 }
 
+//popup
+
+.overlay{
+  @include flex(center, center, '');
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top:0;
+  left: 0;
+  background-color: rgba(0,0,0, 0.4);
+  z-index: 200;
+}
+.popup{
+  width: 400px;
+  border-radius: 4px;
+  @include shadow;
+}
+.popup-header{
+  @include popup-header-old;
+  width: 100%;
+}
+
+.popup-body{
+  padding: 20px;
+  @include flex(center, center, column);
+  background-color: white;
+  img{
+    width: 40px;
+    margin: 20px auto;
+    justify-content: center;
+  }
+
+  p{
+    font:$p-old;
+    font-weight: 400;
+    color:$font-color-1-old;
+  }
+
+  h3 {
+    margin-bottom: 20px;
+    color:$font-color-1-old;
+    font-weight: 400;
+  }
+  a { color: $blue-2-old; }
+}
+
+.popup-footer{
+  @include flex(center, flex-end, '');
+  border-top: 1px solid $border-color-2-old;
+  padding: 8px 20px;
+  background-color: $background-color-3-old;
+  border-radius: 0 0 4px 4px;
+}
+
+//button group
 .data-button-grouping{
   @include flex(center, flex-start, row);
   position: relative;
@@ -204,6 +282,40 @@ outline: none;
       display: block;
       position: absolute;
 
+      top:4px;
+    }
+
+    &::before{
+      transform: rotate(45deg);
+      right: -17px;
+    }
+
+
+    &::after{
+      right: -14px;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+
+.alternative{
+  kbd{
+    position: absolute;
+    pointer-events: none;
+    left: 23px;
+    font-size: 12px;
+    color:$font-color-2-old;
+    font-weight: 500;
+
+    &::before, &::after{
+      content:'';
+      height: 5px;
+      width: 1.5px;
+      background-color: $font-color-2-old;
+      border-radius: 2px;
+      display: block;
+      position: absolute;
       top:4px;
     }
 
