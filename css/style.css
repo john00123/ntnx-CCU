@@ -265,7 +265,7 @@ select.secondary:hover {
 }
 
 .data-block .addon {
-  background-image: url("/img/addon.svg");
+  background-image: url("../img/addon.svg");
 }
 
 .data-block .addon code {
