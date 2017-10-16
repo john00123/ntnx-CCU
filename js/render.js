@@ -37,15 +37,15 @@ $('.flow-options').find('code:eq(1)').click(function(){
     <optgroup label=""></optgroup>
 
     <option class='other' value='Add License'>
-      Add New Node License
+      License new node
     </option>
-    <optgroup class='other' label='Use CCUs to License new nodes'>
+    <optgroup class='other' label='10000 CCUs needed to License new nodes'>
     </optgroup>
 
     <option class='other' value='Reclaim'>
       Reclaim Licenses
     </option>
-    <optgroup class='other' label='Take CCUs out of this cluster'>
+    <optgroup class='other' label='Take all 120000 CCUs out of this cluster'>
     </optgroup>
 
 
