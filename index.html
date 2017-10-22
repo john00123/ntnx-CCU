@@ -5,31 +5,93 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
   <link rel="stylesheet" href="https://john00123.github.io/ntnx-tile/font/font.css">
   <link rel="stylesheet" href="css/style.css">
-  <title>CCU</title>
+
+  <title>Xi Cloud Billing</title>
 </head>
+
 <body>
-  <!-- header -->
-  <header>
-    <h3>Licensing<h3>
-    <button class=secondary>Contact Sales</button>
-  </header>
+  <header></header>
 
-  <!-- controller -->
-  <div class='flow-options'>
-    <code>Day 0</code>
-    <code>Day 2</code>
-  </div>
+  <article class="container">
+    <!-- <div class="actions">
+      <button class="primary"><span>New Report</span></button>
+      <button class="secondary"><span>Add Credit</span></button>
+    </div> -->
 
-  <div class='data-main-content' ></div>
+    <!-- info cards -->
+    <div class="deck"></div>
+    <!-- graph -->
+    <div class="card graph">
+      <div class='card-title'>
+        <h4>Current Bill <code>Dec 15, 2017</code></h4>
+        <div class="balance"><kbd>Balance</kbd></div>
+      </div>
+      <div class='graph-body'>
+        <div class='all-values'>
+          <ul class="dates">
+            <li>10 K</li>
+            <li>8 K</li>
+            <li>6 K</li>
+            <li>4 K</li>
+            <li>2 K</li>
+          </ul>
+          <div class='trend'>
+            <ul class="dates">
+              <li>.</li>
+              <li>.</li>
+              <li>.</li>
+              <li>.</li>
+              <li>.</li>
+            </ul>
+            <div class="x-values"></div>
+          </div>
+        </div>
+      </div>
 
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAsQgxVSNgt4=" crossorigin="anonymous"></script>
-  <script src="js/popup.js" charset="utf-8"></script>
+    </div>
+
+    <!-- table -->
+    <table class="table tusage">
+      <thead>
+        <tr class='table-header'>
+          <th>Usage</th>
+          <th>Quantity</th>
+          <th>Ammount</th>
+        </tr>
+      </thead>
+      <tbody class='usage'></tbody>
+    </table>
+
+    <!-- table -->
+    <table class="table tprev-creds">
+      <thead>
+        <tr class='table-header'>
+          <th>Previous Credits</th>
+          <th>Plan</th>
+          <th>Ammount</th>
+        </tr>
+      </thead>
+      <tbody class='prev-creds'></tbody>
+    </table>
+
+    <table class="table tprev-bills">
+      <thead>
+        <tr class='table-header'>
+          <th>Previous Bills</th>
+          <th>Plan</th>
+          <th>Ammount</th>
+        </tr>
+      </thead>
+      <tbody class='prev-bills'></tbody>
+    </table>
+  </article>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="js/script.js" charset="utf-8"></script>
-  <script src="js/render.js" charset="utf-8"></script>
-
 </body>
 
 </html>
