@@ -382,8 +382,9 @@ Popup
   @include flex(center, center, column);
   @include absolute();
   background-color: rgba(0,0,0,0.4);
-  overflow: hidden;
+  // overflow: hidden;
   z-index: 100;
+  @include transition(opacity);
 }
 
 .popup{
@@ -708,12 +709,12 @@ Animation
 ========================================================================== */
 
 @keyframes appear {
-  from{
+  0%{
     opacity: 0;
     transform:translate3d(0, 50px, 0);
   }
 
-  to{
+  100%{
     opacity: 1;
     transform:translate3d(0, 0, 0);
   }

@@ -135,7 +135,7 @@ const popupData ={
 //popup animation
 function popAnimate(){
   window.scroll(0, 0);
-  $('.overlay').addClass('show');
+  $('.overlay').css('opacity','1');
   $('html').css('overflow','hidden');
   setTimeout(function(){
     $('.popup').addClass('appear');
@@ -278,7 +278,7 @@ function layer2(){
 $(document).ready(function() {
   cardsData();
   // popupContent(0);
-  $('.redeem').click();
+  // $('.redeem').click();
   tableData();
   $('.cluster-license').click(function(){popupContent(0)});
 });

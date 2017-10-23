@@ -570,8 +570,8 @@ Popup
   left: 0;
   right: "";
   background-color: rgba(0, 0, 0, 0.4);
-  overflow: hidden;
   z-index: 100;
+  transition: opacity 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .popup {
@@ -1150,11 +1150,11 @@ input[type="file"] {
 Animation
 ========================================================================== */
 @keyframes appear {
-  from {
+  0% {
     opacity: 0;
     transform: translate3d(0, 50px, 0);
   }
-  to {
+  100% {
     opacity: 1;
     transform: translate3d(0, 0, 0);
   }
