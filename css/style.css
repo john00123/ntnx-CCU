@@ -920,14 +920,14 @@ Popup
 
 .panels .panel1 {
   height: auto;
-  width: 400px;
+  width: 300px;
   box-sizing: border-box;
   padding: 20px;
 }
 
 .panels .panel2 {
-  height: 200px;
-  width: 240px;
+  height: 400px;
+  width: 200px;
   box-sizing: border-box;
   padding: 20px;
   background-color: #F2F4F6;

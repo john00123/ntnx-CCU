@@ -222,7 +222,7 @@ $('.save').click(function(){
 function layer2(){
   $('body').append(
     `<div class="overlay overlay2" style='background-color:transparent;'>
-      <div class="popup layer2" style='opacity:0; width:600px;'>
+      <div class="popup layer2" style='opacity:0; width:500px;'>
         <div class="popup-header popup-header2">
           Licenses for Puppyfood
         </div>
@@ -241,8 +241,20 @@ function layer2(){
               <input type='radio' ' style='margin-right: 10px;'> Ulitmate
             </div>
 
-            <h4 style='margin-bottom:15px;'>Additional Licenses </h4>
-            <p style='color: #22272E'>We have sent a request for you payment method change, your old payment method will remain active until the change has been processed.</p>
+          <div class='separator'></div>
+
+          <h4 style='margin-bottom:15px;'>Additional Licenses </h4>
+            <div class='license-pair' style='margin-bottom:20px;'>
+              <input type='checkbox' style='margin-right: 10px;'> Software Encryption<br>
+              <input type='checkbox' style='margin-right: 10px;'> File Server <br>
+              <input type='checkbox' style='margin-right: 10px;'> Calm
+            </div>
+          <div class='separator'></div>
+          <h4 style='margin-bottom:15px;'>Calm License details</h4>
+            <div class='license-pair'>
+              <label for='vmscount' > Number of Virtual Machines </label>
+              <input style='margin-top:10px;' type='number' id='vmscount' value='500'>
+            </div>
           </div>
 
           <div class='panel2'>
