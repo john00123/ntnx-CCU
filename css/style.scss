@@ -381,7 +381,7 @@ Popup
   @include size(100%, 100vw);
   @include flex(center, center, column);
   @include absolute();
-  background-color: rgba(0,0,0, 0.4);
+  background-color: rgba(0,0,0,0.4);
   overflow: hidden;
   z-index: 100;
 }
@@ -732,8 +732,9 @@ Animation
 }
 
 @keyframes shows {
-  from{ opacity: 0;}
-  to{ opacity: 1; }
+  0%{ opacity: 1;}
+  99%{ opacity: 1; }
+  100%{ opacity: 1; }
 }
 
 @keyframes hides {

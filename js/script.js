@@ -31,49 +31,13 @@ function cardsData() {
       </div>`
     );
 
-    if (index == 3){
-      $('.card:eq(3)').html(
-        `<div class='card-title'>
-            <h4>${cardData.cardInfo[index]}</h4><a>Add Funds</a>
-          </div>
-          <div class='card-body'>
-            <h4>${cardData.cardBody[index]}</h4>
-            <p>${cardData.cardSecondary[index]}</p>
-          </div>`
-      );
-    }
     cards--;
     index++;
   }
 }
 
-// adds points to the chart and hover behavior
-function chartData(){
-  var july=31;
-  for(i = 31; i >= 1; i--){
-    if (i <= 9){ i = '0'+ i; }
-    $('.x-values').append("<p>"+ i +"</p>");
-  }
-
-  $('.x-values p').hover(function(){
-    $(this).append(`<kbd class='tooltip-graph'>
-    $${billingData.Ammounts[0]}</kbd>`);
-    }, function(){
-    $(this).find('kbd').remove();}
-  );
-
-  $('.x-values p').click(function(){
-    $('.click').remove();
-    $(this).append("<span class='tooltip-graph click'>$3780.00</span>");
-  })
-
-  $('.trend').mouseleave(function(){
-    $('.click').remove();
-  })
-}
 
 // adds data to the table and graphs
-
 function tableData(){
   for(let i=0; i<usageData.Class.length; i++){
     $('.usage').append(
@@ -96,6 +60,7 @@ const popupData ={
   ],
 
   body: [
+
     //credits
     `
     <h3 style='margin-bottom:0px'>Select your cluster summary file</h3>
@@ -178,7 +143,7 @@ function popAnimate(){
 
   $('.popup-header, .save, .secondary').click(function(){
       $('.popup').addClass('disappear');
-      $('.overlay').addClass('peek');
+      $('.overlay').fadeIn();
       $('.overlay').removeClass('show');
       $('html').css('overflow','');
       setTimeout(function(){
@@ -191,17 +156,6 @@ function popAnimate(){
 
 //popup
 function popupContent(i){
-  if(i==2){
-    $('body').append(
-      `<div class="overlay" style='opacity:0'>
-        <div class="popup" style='opacity:0; width:500px'>
-          <div class="popup-header">${popupData.title[i]}</div>
-          <div class="popup-body">${popupData.body[i]}</div>
-          <div class="popup-footer">${popupData.footer[i]}</div>
-        </div>
-      </div>`
-    );
-  }else{
   $('body').append(
     `<div class="overlay" style='opacity:0'>
       <div class="popup" style='opacity:0'>
@@ -211,7 +165,7 @@ function popupContent(i){
       </div>
     </div>`
   );
-  }
+
   countNumbers();
   ex();
   popAnimate();
@@ -256,7 +210,7 @@ function ex(){
 
 function checkoff(){
 $('.initial-tax').html(`Nutanix is required to collect sales tax documents.`);
-$('#tax, #tax-label, .consult').show()
+$('#tax, #tax-label, .consult').show();
 $('.save').click(function(){
   $('.card-body:eq(2) h4').text('221-222-333-44');
 });
@@ -267,8 +221,8 @@ $('.save').click(function(){
 
 function layer2(){
   $('body').append(
-    `<div class="overlay overlay2" style='background-color:transparent'>
-      <div class="popup layer2" style='opacity:0; width:600px'>
+    `<div class="overlay overlay2" style='background-color:transparent;'>
+      <div class="popup layer2" style='opacity:0; width:600px;'>
         <div class="popup-header popup-header2">
           Licenses for Puppyfood
         </div>
@@ -308,20 +262,22 @@ function layer2(){
       </div>
     </div>`
   );
-  popAnimate();
+
   $('.back, .popup-header2').click(function(){
     $('.layer2').addClass('disappear');
     $('.popup:not(.layer2)').css('animation','reverse-layer 600ms forwards');
     $('.popup:not(.layer2)').removeClass('second');
     $('.layer2, .overlay2').remove();
   });
+  popAnimate();
+
 }
 
 
 
 $(document).ready(function() {
   cardsData();
-  popupContent(0);
+  // popupContent(0);
   $('.redeem').click();
   tableData();
   $('.cluster-license').click(function(){popupContent(0)});

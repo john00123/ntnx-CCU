@@ -1172,10 +1172,13 @@ Animation
 }
 
 @keyframes shows {
-  from {
-    opacity: 0;
+  0% {
+    opacity: 1;
   }
-  to {
+  99% {
+    opacity: 1;
+  }
+  100% {
     opacity: 1;
   }
 }
