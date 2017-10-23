@@ -212,9 +212,9 @@ function popupContent(i){
     </div>`
   );
   }
-  popAnimate();
   countNumbers();
   ex();
+  popAnimate();
 }
 
 $(document).keyup(function(e) {
