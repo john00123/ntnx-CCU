@@ -15,79 +15,40 @@
 
 <body>
   <header></header>
-
+  <aside>
+    <ul>
+      <li>Summary</li>
+      <li class='sidebar-selected'>Licenses</li>
+      <li>Versions</li>
+    </ul>
+  </aside>
   <article class="container">
-    <!-- <div class="actions">
-      <button class="primary"><span>New Report</span></button>
-      <button class="secondary"><span>Add Credit</span></button>
-    </div> -->
+    <div class="actions">
+      <button class="primary cluster-license"><span> Cluster License</span></button>
+      <button class="secondary"><span>Reclaim</span></button>
+      <button class="secondary"><span>Manage Addons</span></button>
+      <div class='spacer'></div>
+      <button class="secondary"><span>Filter</span></button>
+    </div>
 
     <!-- info cards -->
     <div class="deck"></div>
     <!-- graph -->
-    <div class="card graph">
-      <div class='card-title'>
-        <h4>Current Bill <code>Dec 15, 2017</code></h4>
-        <div class="balance"><kbd>Balance</kbd></div>
-      </div>
-      <div class='graph-body'>
-        <div class='all-values'>
-          <ul class="dates">
-            <li>10 K</li>
-            <li>8 K</li>
-            <li>6 K</li>
-            <li>4 K</li>
-            <li>2 K</li>
-          </ul>
-          <div class='trend'>
-            <ul class="dates">
-              <li>.</li>
-              <li>.</li>
-              <li>.</li>
-              <li>.</li>
-              <li>.</li>
-            </ul>
-            <div class="x-values"></div>
-          </div>
-        </div>
-      </div>
-
-    </div>
+  
 
     <!-- table -->
     <table class="table tusage">
       <thead>
         <tr class='table-header'>
-          <th>Usage</th>
-          <th>Quantity</th>
-          <th>Ammount</th>
+          <th>License Class</th>
+          <th>License Type</th>
+          <th>ACUs Consumed</th>
+          <th>Expiration date</th>
         </tr>
       </thead>
       <tbody class='usage'></tbody>
     </table>
 
-    <!-- table -->
-    <table class="table tprev-creds">
-      <thead>
-        <tr class='table-header'>
-          <th>Previous Credits</th>
-          <th>Plan</th>
-          <th>Ammount</th>
-        </tr>
-      </thead>
-      <tbody class='prev-creds'></tbody>
-    </table>
-
-    <table class="table tprev-bills">
-      <thead>
-        <tr class='table-header'>
-          <th>Previous Bills</th>
-          <th>Plan</th>
-          <th>Ammount</th>
-        </tr>
-      </thead>
-      <tbody class='prev-bills'></tbody>
-    </table>
   </article>
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
