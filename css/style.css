@@ -413,10 +413,6 @@ th:not(:first-child), td:not(:first-child) {
   padding-right: 20px;
 }
 
-th:nth-child(2), td:nth-child(2) {
-  text-align: left;
-}
-
 tr:hover {
   background-color: #f4fbff;
   cursor: default;
@@ -925,13 +921,45 @@ Popup
   padding: 20px;
 }
 
+.panels a {
+  color: #22A5F7;
+}
+
 .panels .panel2 {
-  height: 400px;
+  height: 270px;
   width: 200px;
   box-sizing: border-box;
   padding: 20px;
   background-color: #F2F4F6;
   flex-grow: 1;
+}
+
+.panels .panel2 p {
+  display: flex;
+  font-size: 12px;
+}
+
+.panels .panel2 code {
+  border: 0;
+  flex-grow: 1;
+  text-align: right;
+  background-color: inherit;
+}
+
+.panels .panel2 h4 {
+  display: flex;
+}
+
+.panels .panel2 h4 code {
+  color: #22272E;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.panels .panel2 .separator {
+  background-color: #D5DAE0;
+  opacity: 0.3;
+  margin: 10px 0;
 }
 
 .banner {

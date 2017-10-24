@@ -6,11 +6,12 @@ const cardData ={
 
 
 const usageData ={
-  Class:['Software Only','Software Only','Software Only','Software Only','Software Only','Software Only','Appliance','Appliance' ,'Appliance' ,'Appliance','Appliance','Appliance' ,'Appliance' ,'Appliance'],
 
   Type :['Acropolis Pro','Acropolis Pro','Acropolis Pro','Acropolis Pro','Acropolis Pro','Acropollis Ultimate','Acropollis Ultimate','Acropollis Ultimate','Calm','File Server','File Server', 'Software Encryption','Software Encryption','Prism Pro'],
 
-  Ammounts :['750','600','135','750','600','135','750','600','135','750','600','135','750','600','135'],
+  Purchased :['750','600','135','750','600','135','750','600','135','750','600','135','750','600','135'],
+
+  Ammounts :['750','600','135','750','600','135','750','0','135','750','0','135','750','600','135'],
 
   Expiration :['12/12/2020','12/12/2020','12/12/2020','12/12/2020','12/12/2020','12/12/2020','12/12/2020','12/12/2022','12/12/2022','12/12/2022','12/12/2022','12/12/2022','12/12/2022','12/12/2022','12/12/2022','12/12/2022'],
 }
@@ -39,11 +40,11 @@ function cardsData() {
 
 // adds data to the table and graphs
 function tableData(){
-  for(let i=0; i<usageData.Class.length; i++){
+  for(let i=0; i<usageData.Type.length; i++){
     $('.usage').append(
       `<tr>
-        <td> ${usageData.Class[i]}</td>
         <td> ${usageData.Type[i]}</td>
+        <td> ${usageData.Purchased[i]}</td>
         <td> ${usageData.Ammounts[i]}</td>
         <td> ${usageData.Expiration[i]}</td>
     </tr>`);
@@ -247,21 +248,29 @@ function layer2(){
             <div class='license-pair' style='margin-bottom:20px;'>
               <input type='checkbox' style='margin-right: 10px;'> Software Encryption<br>
               <input type='checkbox' style='margin-right: 10px;'> File Server <br>
-              <input type='checkbox' style='margin-right: 10px;'> Calm
+
             </div>
-          <div class='separator'></div>
-          <h4 style='margin-bottom:15px;'>Calm License details</h4>
-            <div class='license-pair'>
-              <label for='vmscount' > Number of Virtual Machines </label>
-              <input style='margin-top:10px;' type='number' id='vmscount' value='500'>
-            </div>
+
+
           </div>
 
           <div class='panel2'>
             <h4 style='margin-bottom:15px;''> Checkout</h4>
-            <p> Starter License <code>300 CCU</code></p>
-            <p> Starter License <code>300 CCU</code></p>
-            <p> Starter License <code>300 CCU</code></p>
+            <p> Starter  <code>3000 ACU</code></p>
+            <p> SW Encrypt... <code>2800 ACU</code></p>
+            <p> File Server <code>3200 ACU</code></p>
+
+
+            <div class='separator'></div>
+
+            <p> Subtotal <code>3000 ACU</code></p>
+            <p> Available <code>2800 ACU</code></p>
+
+            <div class='separator'></div>
+
+
+            <h4 style='margin-top:20px; margin-bottom:15px;'>To buy <code>200 ACU</code></h4>
+
           </div>
 
         </div>
@@ -285,6 +294,14 @@ function layer2(){
 
 }
 
+
+var calmDetails = `  <div class='separator'></div>
+
+  <h4 style='margin-bottom:15px;'>Calm License details</h4>
+    <div class='license-pair'>
+      <label for='vmscount' > Number of Virtual Machines </label>
+      <input style='margin-top:10px;' type='number' id='vmscount' value='500'>
+    </div>`
 
 
 $(document).ready(function() {
