@@ -297,9 +297,12 @@ function layer2(){
             <h3 mar> ACUs required</h3>
             <div class=flexbox-stretch><kbd>${licensePrices[0].key}</kbd> <code class='subt'>${licensePrices[0].price}</code></div>
 
+
+
+
             <div class='separator prices'></div>
 
-          <div class=flexbox-stretch><kbd>Subtotal</kbd> <code class='subt'>${sum}</code></div>
+            <div class=flexbox-stretch><kbd>Subtotal</kbd> <code class='subt'>${sum}</code></div>
 
             <div class=flexbox-stretch><kbd>Available</kbd> <code >${50000} </code></div>
 
@@ -422,8 +425,8 @@ var calmDetails =
 
 $(document).ready(function() {
   cardsData();
-  popupContent(0);
-  $('.redeem').click();
+  // popupContent(0);
+  // $('.redeem').click();
   tableData();
   $('.cluster-license').click(function(){popupContent(0)});
 });
