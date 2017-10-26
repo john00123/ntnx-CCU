@@ -965,9 +965,10 @@ Popup
 }
 
 .panels .panel2 {
-  height: 265px;
+  height: auto;
   width: 200px;
   box-sizing: border-box;
+  min-height: 250px;
   padding: 25px 20px;
   background-color: #F2F4F6;
 }

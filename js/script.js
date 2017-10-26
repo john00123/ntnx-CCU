@@ -295,7 +295,7 @@ function layer2(){
 
           <div class='panel2'>
             <h3 mar> ACUs required</h3>
-            <div class=flexbox-stretch><kbd>${licensePrices[0].key}</kbd> <code class='subt'>${licensePrices[0].price}</code></div>
+            <div class=flexbox-stretch><kbd>${licensePrices[0].key}</kbd> <code>${licensePrices[0].price}</code></div>
 
 
 
@@ -305,7 +305,8 @@ function layer2(){
             <div class=flexbox-stretch><kbd>Subtotal</kbd> <code class='subt'>${sum}</code></div>
 
             <div class=flexbox-stretch><kbd>Available</kbd> <code >${50000} </code></div>
-
+              <div class='separator'></div>
+            <p> * License on this cluster will expire on 12/12/2020 based on your earliest expiration date ACUs.</p>
           </div>
 
         </div>
