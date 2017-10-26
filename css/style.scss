@@ -144,6 +144,32 @@ header {
   }
 }
 
+
+.actions-dropdown{
+  position: relative;
+  width: 92px;
+  text-align: left;
+
+  &::before, &::after {
+  position: absolute;
+  content: " ";
+  background-color: $font-color-1;
+  width: 5px;
+  height: 1.5px;
+  right: 19px;
+  top: 55%;
+  margin-top: -1px;
+  border-radius: 1px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  }
+
+  &::after {
+      right: 16px;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+  }
+}
 /* ==========================================================================
 Cards
 ========================================================================== */
@@ -267,7 +293,7 @@ th:not(:first-child), td:not(:first-child){
   width: 110px;
   padding-right: 20px;
 }
-// 
+//
 // th:nth-child(2), td:nth-child(2){
 //   text-align: left;
 // }
@@ -390,6 +416,16 @@ Popup
 .popup{
   @include size(auto,400px);
   @include shadow;
+}
+
+.flexbox-stretch{
+  display: flex;
+  width:100%;
+  align-items: stretch;
+  flex-grow: 1;
+  color: $font-color-3;
+  justify-content: space-between;
+
 }
 
 
@@ -578,11 +614,14 @@ Popup
   }
 
   //sidebar
+
+  .license-pair{
+    margin-bottom: 5px;
+  }
   .panel2{
-    @include size(270px, 200px);
-    padding: 20px;
+    @include size(265px, 200px);
+    padding: 25px 20px;
     background-color: $background-color-3;
-    flex-grow: 1;
 
     p{
       display: flex;
@@ -610,6 +649,10 @@ Popup
       background-color: $border-color-2;
       opacity: 0.3;
       margin: 10px 0;
+    }
+
+    code{
+      color:$font-color-1;
     }
 
   }

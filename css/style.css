@@ -237,6 +237,32 @@ header {
   flex-grow: 1;
 }
 
+.actions-dropdown {
+  position: relative;
+  width: 92px;
+  text-align: left;
+}
+
+.actions-dropdown::before, .actions-dropdown::after {
+  position: absolute;
+  content: " ";
+  background-color: #22272E;
+  width: 5px;
+  height: 1.5px;
+  right: 19px;
+  top: 55%;
+  margin-top: -1px;
+  border-radius: 1px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.actions-dropdown::after {
+  right: 16px;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
 /* ==========================================================================
 Cards
 ========================================================================== */
@@ -575,6 +601,15 @@ Popup
   width: 400px;
   box-sizing: border-box;
   box-shadow: 0 9px 9px 0 rgba(0, 0, 0, 0.02), 0 3px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 1px 0 rgba(0, 0, 0, 0.02);
+}
+
+.flexbox-stretch {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+  flex-grow: 1;
+  color: #7C8D9F;
+  justify-content: space-between;
 }
 
 .popup-header {
@@ -925,13 +960,16 @@ Popup
   color: #22A5F7;
 }
 
+.panels .license-pair {
+  margin-bottom: 5px;
+}
+
 .panels .panel2 {
-  height: 270px;
+  height: 265px;
   width: 200px;
   box-sizing: border-box;
-  padding: 20px;
+  padding: 25px 20px;
   background-color: #F2F4F6;
-  flex-grow: 1;
 }
 
 .panels .panel2 p {
@@ -960,6 +998,10 @@ Popup
   background-color: #D5DAE0;
   opacity: 0.3;
   margin: 10px 0;
+}
+
+.panels .panel2 code {
+  color: #22272E;
 }
 
 .banner {

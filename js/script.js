@@ -1,7 +1,7 @@
 const cardData ={
   cardInfo : ['ACU Available','ACU Consumed','Enviroment information'],
-  cardBody :['13000 Consumed ACUs','200 available ACUs','50 Clusters Licensed', ],
-  cardSecondary : ['Exp. 20/10/2020','Exp. 20/10/2020 ','Last updated Oct 2016'],
+  cardBody :['13000','50000 ','50 Clusters Licensed', ],
+  cardSecondary : ['Consumed ACUs','Available ACUs','Last updated Oct 2016'],
 }
 
 
@@ -15,6 +15,14 @@ const usageData ={
 
   Expiration :['12/12/2020','12/12/2020','12/12/2020','12/12/2020','12/12/2020','12/12/2020','12/12/2020','12/12/2022','12/12/2022','12/12/2022','12/12/2022','12/12/2022','12/12/2022','12/12/2022','12/12/2022','12/12/2022'],
 }
+
+
+const licensePrices=[
+  {key: 'Starter', price:9000},
+  {key: 'Pro', price:12000},
+  {key: 'Ultimate', price:16000},
+]
+
 
 
 // creates cards
@@ -233,21 +241,52 @@ function layer2(){
           <div class='panel1'>
           <h4 style='margin-bottom:15px;'>Acropolis License </h4>
             <div class='license-pair'>
-              <input type='radio' checked='checked' style='margin-right: 10px;'> Starter
+
+              <input
+              type='radio'
+              checked='checked'
+              value='starter'
+              style='margin-right: 10px;
+              id='acropolis-starter'>
+
+              Starter
+
             </div>
             <div class='license-pair'>
-              <input type='radio'  style='margin-right: 10px;'> Pro
+              <input
+              type='radio'
+              value='pro'
+              style='margin-right: 10px;'
+              id='acropolis-pro'>
+              Pro
             </div>
             <div class='license-pair' style='margin-bottom:30px;'>
-              <input type='radio' ' style='margin-right: 10px;'> Ulitmate
+            <input
+             type='radio'
+             value='ultimate'
+             style='margin-right: 10px;'
+             id='acropolis-ultimate'>
+             Ulitmate
             </div>
 
           <div class='separator'></div>
 
           <h4 style='margin-bottom:15px;'>Additional Licenses </h4>
-            <div class='license-pair' style='margin-bottom:20px;'>
-              <input type='checkbox' style='margin-right: 10px;'> Software Encryption<br>
-              <input type='checkbox' style='margin-right: 10px;'> File Server <br>
+            <div class='license-pair'>
+
+              <input type='checkbox'
+              style='margin-right: 10px;
+              margin-bottom:10px;'
+              id='fs'
+              value='fs'>
+              File Server <br>
+
+              <input
+              type='checkbox'
+              style='margin-right: 10px;'
+              id='sw'
+              value='sw'>
+              Software Encryption<br>
 
             </div>
 
@@ -255,29 +294,25 @@ function layer2(){
           </div>
 
           <div class='panel2'>
-            <h4 style='margin-bottom:15px;''> Checkout</h4>
-            <p> Starter  <code>3000 ACU</code></p>
-            <p> SW Encrypt... <code>2800 ACU</code></p>
-            <p> File Server <code>3200 ACU</code></p>
+            <h3 mar> ACUs required</h3>
+            <div class=flexbox-stretch><kbd>${licensePrices[0].key}</kbd> <code class='subt'>${licensePrices[0].price}</code></div>
 
+            <div class='separator prices'></div>
 
-            <div class='separator'></div>
+          <div class=flexbox-stretch><kbd>Subtotal</kbd> <code class='subt'>${sum}</code></div>
 
-            <p> Subtotal <code>3000 ACU</code></p>
-            <p> Available <code>2800 ACU</code></p>
-
-            <div class='separator'></div>
-
-
-            <h4 style='margin-top:20px; margin-bottom:15px;'>To buy <code>200 ACU</code></h4>
+            <div class=flexbox-stretch><kbd>Available</kbd> <code >${50000} </code></div>
 
           </div>
 
         </div>
 
         <div class="popup-footer">
-          <button class="secondary save confirm" style='margin-right:0;'>
-            Close
+          <button class="secondary save confirm" style='margin-right:10px;'>
+            Cancel
+          </button>
+          <button class="primary save confirm" style='margin-right:0;'>
+            Save
           </button>
         </div>
       </div>
@@ -291,23 +326,104 @@ function layer2(){
     $('.layer2, .overlay2').remove();
   });
   popAnimate();
-
+  CheckoutData();
+  CheckoutData2();
+  CheckoutData3()
 }
 
 
-var calmDetails = `  <div class='separator'></div>
+let Popurri = {
+  option : 9000,
+  sw: null,
+  fs: null
+}
 
-  <h4 style='margin-bottom:15px;'>Calm License details</h4>
-    <div class='license-pair'>
-      <label for='vmscount' > Number of Virtual Machines </label>
-      <input style='margin-top:10px;' type='number' id='vmscount' value='500'>
-    </div>`
+
+let sum = Popurri.option + Popurri.sw + Popurri.fs;
+
+//checkout functions
+function CheckoutData(){
+
+  $('input:radio').change(function(){
+    $('input:radio:checked').not(this).prop('checked', false);
+
+
+    //starter price
+    if($(this).val()==='starter'){
+      $('.flexbox-stretch:eq(0)').html(`${licensePrices[0].key}<code>${licensePrices[0].price}</code>`)
+      Popurri.option = licensePrices[0].price;
+    }
+
+    if($(this).val()==='pro'){
+      $('.flexbox-stretch:eq(0)').html(`${licensePrices[1].key}<code>${licensePrices[1].price}</code>`)
+      Popurri.option = licensePrices[1].price;
+    }
+
+    if($(this).val()==='ultimate'){
+      $('.flexbox-stretch:eq(0)').html(`${licensePrices[2].key}<code>${licensePrices[2].price}</code>`)
+      Popurri.option = licensePrices[2].price;
+    }
+    sum = Popurri.option + Popurri.sw + Popurri.fs;
+    $('.subt').text(sum);
+  });
+}
+
+
+function CheckoutData3(){
+$('#sw').change(function(){
+  if($('#sw').is(':checked')){
+    $('.prices').before(`
+      <div class='flexbox-stretch sw-data'>
+        <kbd>SW Encryption</kbd>
+        <code>${licensePrices[0].price}</code>
+      </div>
+    `);
+    Popurri.sw = licensePrices[0].price;
+
+  } else{
+    $('.sw-data').remove();
+    Popurri.sw = null;
+  }
+  sum = Popurri.option + Popurri.sw + Popurri.fs;
+  $('.subt').text(sum);
+});
+}
+
+
+function CheckoutData2(){
+$('#fs').change(function(){
+
+  if($('#fs').is(':checked')){
+    $('.prices').before(`
+      <div class='flexbox-stretch fs-data'>
+        <kbd>File Server</kbd>
+        <code>${licensePrices[0].price}</code>
+      </div>
+    `);
+    Popurri.fs = licensePrices[0].price;
+  } else{
+    $('.fs-data').remove();
+    Popurri.fs = null;
+  }
+  sum = Popurri.option + Popurri.sw + Popurri.fs;
+  $('.subt').text(sum);
+});
+}
+
+
+var calmDetails =
+`<div class='separator'></div>
+<h4 style='margin-bottom:15px;'>Calm License details</h4>
+<div class='license-pair'>
+  <label for='vmscount' > Number of Virtual Machines </label>
+  <input style='margin-top:10px;' type='number' id='vmscount' value='500'>
+</div> `
 
 
 $(document).ready(function() {
   cardsData();
-  // popupContent(0);
-  // $('.redeem').click();
+  popupContent(0);
+  $('.redeem').click();
   tableData();
   $('.cluster-license').click(function(){popupContent(0)});
 });
