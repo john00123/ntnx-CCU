@@ -18,7 +18,8 @@ body {
 }
 
 aside{
-@include size(100vh, 240px);
+@include size(106vh, 240px);
+min-height: 100%;
 display: block;
 background-color: white;
 float: left;
