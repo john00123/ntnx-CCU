@@ -111,10 +111,20 @@ header {
   padding: 20px 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  flex-direction: "";
+  justify-content: flex-start;
+  flex-direction: row;
   background-color: #22272E;
-  color: transparent;
+  color: #7C8D9F;
+  font-weight: 500;
+}
+
+header a:not(:last-child) {
+  margin-right: 30px;
+}
+
+header .right {
+  text-align: right;
+  flex-grow: 1;
 }
 
 .container {

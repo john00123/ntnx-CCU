@@ -89,9 +89,17 @@ span{
 header {
   @include size(60px, 100%);
   @include padding();
-  @include flex(center, space-between, '');
+  @include flex(center, flex-start, row);
   background-color: $background-color-1;
-  color: transparent;
+  color: $font-color-3;
+  font-weight: 500;
+  a:not(:last-child){
+    margin-right: 30px;
+  }
+  .right{
+    text-align: right;
+    flex-grow: 1;
+  }
 }
 
 //container
