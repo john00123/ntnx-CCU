@@ -1,7 +1,7 @@
 const cardData ={
-  cardInfo : ['ACU Available','ACU Consumed','Enviroment information'],
+  cardInfo : ['Miles Available','Miles Consumed','Enviroment information'],
   cardBody :['13000','50000 ','50 Clusters Licensed', ],
-  cardSecondary : ['Consumed ACUs','Available ACUs','Last updated Oct 2016'],
+  cardSecondary : ['Consumed Miles','Available Miles','Last updated Oct 2016'],
 }
 
 
@@ -294,7 +294,7 @@ function layer2(){
           </div>
 
           <div class='panel2'>
-            <h3 mar> ACUs required</h3>
+            <h3 mar> Miles required</h3>
             <div class=flexbox-stretch><kbd>${licensePrices[0].key}</kbd> <code>${licensePrices[0].price}</code></div>
 
 
@@ -306,7 +306,7 @@ function layer2(){
 
             <div class=flexbox-stretch><kbd>Available</kbd> <code >${50000} </code></div>
               <div class='separator'></div>
-            <p> * License on this cluster will expire on 12/12/2020 based on your earliest expiration date ACUs.</p>
+            <p> * License on this cluster will expire on 12/12/2020 based on your earliest expiration date Miles.</p>
           </div>
 
         </div>
