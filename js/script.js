@@ -10,6 +10,7 @@ $(document).keyup( e => {
 function cardsData() {
   var cards = cardData.cardInfo.length;
   var index = 0;
+  $('aside h4').text(`${cardData.cardBody[1]} CCUs Available`)
   // function
   while (cards> 0){
     $('.deck').append(
@@ -56,6 +57,7 @@ function multiPopup(){
     setTimeout(countNumbers(),600);
     cardData.cardBody[1] += 40000;
     $('.card:eq(1) h4').text(cardData.cardBody[1]);
+    $('aside h4').text(`${cardData.cardBody[1]} CCUs Available`);
 
   });
 }
