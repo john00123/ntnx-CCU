@@ -211,14 +211,16 @@ function countNumbers(){
   $('.popup-header').css('border-bottom','none');
   $('.banner').slideDown();
   $('.count').each(function () {
-    var $this = $(this);
-    $({ Counter:$this.text()}).animate(
-      { Counter:5000 }, {
-      duration: 600,
-      step: function (){
-        $this.text(Math.ceil(this.Counter));
-      }
-     });
+    $(this).prop('Counter',0).animate({
+        Counter: $(this).text() },
+        {
+        duration: 2000,
+        easing: 'swing',
+        step: function (now) {
+            $(this).text(Math.ceil(now));
+        }
+    });
+    
   });
 
   setTimeout(function(){
