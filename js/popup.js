@@ -86,6 +86,8 @@ const popupData ={
 
     `<button class="secondary cancel"> Cancel </button>
      <button class="primary save"> Save Changes </button>`,
+
+    `<button class="secondary cancel" style="margin-right:0"> Done </button>`,
   ]
 }
 
@@ -98,6 +100,7 @@ const layer2Data = {
       <div class="popup-body panels">
 
         <div class='panel1'>
+        <p style='margin-bottom:20px;'> Licensing costs have been calculated based on cluster capacity <code class='tooltip-trigger'> See capacity </code></p>
         <h4 style='margin-bottom:15px;'>Acropolis License </h4>
           <div class='license-pair'>
 
@@ -180,8 +183,8 @@ const layer2Data = {
 
 `
   <div class="popup-header">${popupData.title[0]}</div>
-  <h3> You have reclaimed CCUs</h3>
-  <div class="popup-footer">${popupData.footer[3]}</div>
+  <div class="popup-body"> <h3> You have reclaimed CCUs</h3></div>
+  <div class="popup-footer">${popupData.footer[4]}</div>
 `,
 
 ]
@@ -193,7 +196,7 @@ function layer2(i){
   $('body').append(
     `<div class="overlay overlay2" style='background-color:transparent;'>
       <div class="popup layer2" style='opacity:0; width:500px;'>
-      ${layer2Data.body[i]}
+      <div> ${layer2Data.body[i]}</div>
       </div>
     </div>`
   );
@@ -204,6 +207,10 @@ function layer2(i){
     $('.popup:not(.layer2)').removeClass('second');
     $('.layer2, .overlay2').remove();
   });
+
+  if (i===1){
+    $('.layer2').css('width','300px');
+  }
 
   popAnimate();
   CheckoutData();

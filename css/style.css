@@ -23,6 +23,22 @@ body {
   flex-direction: row;
 }
 
+.banner {
+  height: 40px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: "";
+  flex-direction: "";
+  padding: 8px 20px;
+  line-height: 10px;
+  color: #31bb67;
+  font-weight: 400;
+  z-index: 1;
+  background-color: #ebfaf0;
+}
+
 aside {
   height: 102%;
   width: 240px;

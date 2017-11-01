@@ -18,6 +18,19 @@ body {
   @include flex(center, center, row);
 }
 
+
+.banner{
+  @include size(40px, 100%);
+  @include flex(center,'','');
+  padding:8px 20px;
+  line-height: 10px;
+  color: $dark-green-3;
+  font-weight: 400;
+  z-index: 1;
+  background-color: $light-green-3;
+}
+
+
 aside{
 @include size(102%, 240px);
 display: block;
@@ -793,6 +806,8 @@ input[type="file"]{
     border-radius: 4px 0 0 4px;
   }
 }
+
+
 
 .tax-block{
   @include size(14px, 100%);

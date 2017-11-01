@@ -53,6 +53,7 @@ function multiPopup(){
   $('.reclaim').click(function() {
     $('.popup').addClass('second');
     layer2(1);
+    setTimeout(countNumbers(),600);
   });
 }
 
@@ -83,6 +84,7 @@ function popupContent(i){
   multiPopup();
   uploadFile();
   popAnimate();
+  // countNumbers();
 }
 
 
@@ -188,20 +190,54 @@ function dropDown(){
   $('.primary').click(function(){
     $('.floater').hide();
   });
+
   $('.actions-dropdown').click(function(){
     $('span', this).toggleClass('black-span-btn');
     $('.floater').toggle();
-
   });
 }
 
+
+
+//counter
+function countNumbers(){
+
+  $('.layer2 .popup-body').before(`<div class='banner'>$4200 have been credited to your account.</div>`);
+  $('.banner').toggle();
+  $('.money').css('color','#18BE5F');
+  $('.popup-header').css('border-bottom','none');
+  $('.banner').slideDown();
+  $('.count').each(function () {
+    var $this = $(this);
+    $({ Counter:$this.text() }).animate(
+      { Counter:4900 }, {
+      duration: 600,
+      step: function () {
+        $this.text(Math.ceil(this.Counter)+100);
+      }
+     });
+  });
+
+  setTimeout(function(){
+    $('.banner').slideUp();
+    $('.popup-header').css('border-bottom','');
+
+    setTimeout(function(){
+      $('.banner').remove();
+    },300);
+
+  },7000);
+
+}
 
 $(document).ready(function() {
   cardsData();
   sideBarSelection();
   tableData();
   dropDown();
-  $('.reclaim-popup').click(function(){popupContent(1)});
+  $('.reclaim-popup').click(function(){
+    popupContent(1);
+  });
   $('.cluster-license').click(function(){popupContent(0)});
 
 });
