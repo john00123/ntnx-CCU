@@ -168,7 +168,7 @@ const layer2Data = {
 
           <div class=flexbox-stretch>
             <kbd>Available</kbd>
-            <code >${50000} </code>
+            <code class='av'>${cardData.cardBody[1]} </code>
           </div>
 
           <div class='separator'></div>
@@ -182,8 +182,8 @@ const layer2Data = {
 `,
 
 `
-  <div class="popup-header">${popupData.title[0]}</div>
-  <div class="popup-body"> <h3> You have reclaimed CCUs</h3></div>
+  <div class="popup-header">${popupData.title[3]}</div>
+  <div class="popup-body"> <h3> You have reclaimed all the unused CCUs available on this cluster </h3></div>
   <div class="popup-footer">${popupData.footer[4]}</div>
 `,
 
@@ -209,7 +209,7 @@ function layer2(i){
   });
 
   if (i===1){
-    $('.layer2').css('width','300px');
+    $('.layer2').css('width','400px');
   }
 
   popAnimate();

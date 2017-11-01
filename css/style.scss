@@ -692,7 +692,7 @@ Popup
     margin-bottom: 5px;
   }
   .panel2{
-    @include size(auto, 200px);
+    @include size(330px, 200px);
     min-height: 250px;
     padding: 25px 20px;
     background-color: $background-color-3;

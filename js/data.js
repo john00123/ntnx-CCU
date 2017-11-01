@@ -1,6 +1,6 @@
 const cardData ={
   cardInfo : ['CCUs Available','CCUs Consumed','Enviroment information'],
-  cardBody :['13000','50000 ','50 Clusters Licensed', ],
+  cardBody :[13000,50000 ,50 + ' Clusters Licensed', ],
   cardSecondary : ['Consumed CCUs','Available CCUs','Last updated Oct 2016'],
 }
 

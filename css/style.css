@@ -1039,7 +1039,7 @@ Popup
 }
 
 .panels .panel2 {
-  height: auto;
+  height: 330px;
   width: 200px;
   box-sizing: border-box;
   min-height: 250px;

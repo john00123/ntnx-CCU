@@ -54,6 +54,9 @@ function multiPopup(){
     $('.popup').addClass('second');
     layer2(1);
     setTimeout(countNumbers(),600);
+    cardData.cardBody[1] += 40000;
+    $('.card:eq(1) h4').text(cardData.cardBody[1]);
+
   });
 }
 
@@ -202,7 +205,7 @@ function dropDown(){
 //counter
 function countNumbers(){
 
-  $('.layer2 .popup-body').before(`<div class='banner'>$4200 have been credited to your account.</div>`);
+  $('.layer2 .popup-body').before(`<div class='banner'>4000 CCUs have been credited to your account.</div>`);
   $('.banner').toggle();
   $('.money').css('color','#18BE5F');
   $('.popup-header').css('border-bottom','none');
