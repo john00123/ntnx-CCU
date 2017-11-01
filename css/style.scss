@@ -193,6 +193,7 @@ header {
   width: 92px;
   text-align: left;
 
+
   &::before, &::after {
   position: absolute;
   content: " ";
@@ -211,6 +212,10 @@ header {
       right: 16px;
       -webkit-transform: rotate(-45deg);
       transform: rotate(-45deg);
+  }
+
+  &:hover{
+  &::before, &::after {background-color: $blue-1;}
   }
 }
 

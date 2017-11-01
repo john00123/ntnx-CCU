@@ -310,6 +310,10 @@ header .right {
   transform: rotate(-45deg);
 }
 
+.actions-dropdown:hover::before, .actions-dropdown:hover::after {
+  background-color: #22A5F7;
+}
+
 .black-span-btn {
   color: #22272E;
 }
