@@ -642,11 +642,9 @@ Popup
     width: 100%;
     text-align: center;
     justify-content: center;
-    &::before{
-      content: '$';
-    }
+
     &::after{
-      content: '.00';
+      content: ' CCUs';
     }
   }
 

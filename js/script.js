@@ -212,11 +212,11 @@ function countNumbers(){
   $('.banner').slideDown();
   $('.count').each(function () {
     var $this = $(this);
-    $({ Counter:$this.text() }).animate(
-      { Counter:4900 }, {
+    $({ Counter:$this.text()}).animate(
+      { Counter:5000 }, {
       duration: 600,
-      step: function () {
-        $this.text(Math.ceil(this.Counter)+100);
+      step: function (){
+        $this.text(Math.ceil(this.Counter));
       }
      });
   });

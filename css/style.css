@@ -962,12 +962,8 @@ Popup
   justify-content: center;
 }
 
-.popup-body .money::before {
-  content: '$';
-}
-
 .popup-body .money::after {
-  content: '.00';
+  content: ' CCUs';
 }
 
 .popup-body .term {
