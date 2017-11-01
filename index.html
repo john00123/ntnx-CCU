@@ -15,26 +15,37 @@
 
 <body>
   <header>
+      <img src='img/x_logo.svg'/>
       <a>Documentation</a>
       <a>Support</a>
       <a>Downloads</a>
-      <a style='color:white;'>My products</a>
+      <a style='color:white;'> Licenses</a>
       <a class='right'>John Doe</a>
   </header>
 
   <aside>
+    <h1>Licenses</h1>
+    <h4>50000 CCus available</h4>
+    <div class='separator'></div>
     <ul>
       <li>Summary</li>
-      <li class='sidebar-selected'>Licenses</li>
-      <li>Versions</li>
+      <li> Prism Central license</li>
+      <li class='sidebar-selected'>Cluster licenses</li>
+      <!-- <li>Node licenses</li> -->
     </ul>
   </aside>
 
   <article class="container">
     <div class="actions">
       <button class="primary cluster-license"><span> Cluster License</span></button>
-      <button class="primary cluster-license" style='margin-left:10px'><span> PC Licenses</span></button>
-      <button class="secondary actions-dropdown"><span>Actions</span></button>
+      <!-- <button class="primary cluster-license" style='margin-left:10px'><span> PC Licenses</span></button> -->
+      <button class="secondary actions-dropdown"><span>Actions</span>
+
+        <div class='floater'>
+        <a class='reclaim-popup'> Reclaim CCUs </a>
+        <a class='update-popup'> Update License</a>  
+        </div>
+      </button>
       <div class='spacer'></div>
       <button class="secondary"><span>Filter</span></button>
     </div>
@@ -47,8 +58,8 @@
       <thead>
         <tr class='table-header'>
           <th>License Type</th>
-          <th>Miles Purchased</th>
-          <th>Miles Consumed</th>
+          <th>CCUs Purchased</th>
+          <th>CCUs Consumed</th>
           <th>Expiration date</th>
         </tr>
       </thead>
@@ -59,6 +70,9 @@
 
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
   <script src="js/script.js" charset="utf-8"></script>
+  <script src="js/data.js" charset="utf-8"></script>
+  <script src="js/popup.js" charset="utf-8"></script>
+
 </body>
 
 </html>

@@ -7,6 +7,7 @@ html {
   -webkit-font-smoothing: antialiased;
   background-color: #F2F4F6;
   overflow-x: hidden;
+  height: 100%;
 }
 
 body {
@@ -23,13 +24,34 @@ body {
 }
 
 aside {
-  height: 106vh;
+  height: 102%;
   width: 240px;
   box-sizing: border-box;
-  min-height: 100%;
   display: block;
   background-color: white;
   float: left;
+}
+
+aside h1 {
+  margin-top: 30px;
+  margin-left: 20px;
+  font: 200 29px/20px "nutanix_soft", san-serif;
+}
+
+aside h4 {
+  margin-left: 20px;
+  margin-top: 20px;
+  font: 400 14px/10px "nutanix_soft", san-serif;
+  color: #9AA5B5;
+}
+
+aside .separator {
+  height: 1px;
+  width: 30px;
+  box-sizing: border-box;
+  background-color: #D5DAE0;
+  margin: 20px 20px -10px 20px;
+  flex-shrink: 0;
 }
 
 aside ul {
@@ -77,6 +99,10 @@ aside .sidebar-selected:hover {
   color: initial;
 }
 
+header img {
+  margin-right: 20px;
+}
+
 button {
   outline: none;
 }
@@ -115,12 +141,17 @@ header {
   justify-content: flex-start;
   flex-direction: row;
   background-color: #22272E;
-  color: #7C8D9F;
+  color: #9AA5B5;
   font-weight: 500;
 }
 
+header a {
+  height: 10px;
+  line-height: 9pt;
+}
+
 header a:not(:last-child) {
-  margin-right: 30px;
+  margin-right: 20px;
 }
 
 header .right {
@@ -129,12 +160,12 @@ header .right {
 }
 
 .container {
-  height: 100%;
+  height: auto;
   width: auto;
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   margin: 8px auto;
   padding: 20px;
@@ -248,6 +279,11 @@ header .right {
   flex-grow: 1;
 }
 
+.btn-disabled {
+  pointer-events: none;
+  opacity: 0.3;
+}
+
 .actions-dropdown {
   position: relative;
   width: 92px;
@@ -272,6 +308,10 @@ header .right {
   right: 16px;
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
+}
+
+.black-span-btn {
+  color: #22272E;
 }
 
 /* ==========================================================================
@@ -516,6 +556,8 @@ td kbd:hover, td kbd:hover::before, td kbd:hover::after {
 }
 
 .floater {
+  display: none;
+  width: 100px;
   border: 1px solid #D5DAE0;
   border-radius: 4px;
   padding: 11px 15px;
@@ -527,8 +569,8 @@ td kbd:hover, td kbd:hover::before, td kbd:hover::after {
   outline: none;
   box-shadow: 0 9px 9px 0 rgba(0, 0, 0, 0.02), 0 3px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 1px 0 rgba(0, 0, 0, 0.02);
   position: absolute;
-  top: 24px;
-  right: -15px;
+  top: 34px;
+  left: 0px;
   z-index: 3000;
 }
 
@@ -550,6 +592,7 @@ td kbd:hover, td kbd:hover::before, td kbd:hover::after {
 
 .floater a {
   margin-left: 0;
+  line-height: 30px;
   text-decoration: none;
   color: #22272E;
 }
@@ -568,7 +611,7 @@ td kbd:hover, td kbd:hover::before, td kbd:hover::after {
   top: -4px;
   transform: rotate(45deg) scale(0.8);
   border-radius: 1.5px;
-  right: 10px;
+  left: 65px;
   background-color: white;
   box-shadow: -1px -1px 0 0 #D5DAE0;
   height: 10px;
