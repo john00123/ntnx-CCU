@@ -155,6 +155,7 @@ const layer2Data = {
 
         <div class='panel2'>
           <h3 mar> CCUs required</h3>
+
           <div class=flexbox-stretch>
             <kbd>${licensePrices[0].key}</kbd> <code>${licensePrices[0].price}</code>
           </div>
@@ -183,7 +184,7 @@ const layer2Data = {
 
 `
   <div class="popup-header">${popupData.title[3]}</div>
-  <div class="popup-body"> <h3> You have reclaimed all the unused CCUs available on this cluster </h3></div>
+  <div class="popup-body"> <h3> You have reclaimed all the unused CCUs available on this cluster </h3><span class='count money'>000</span></div>
   <div class="popup-footer">${popupData.footer[4]}</div>
 `,
 

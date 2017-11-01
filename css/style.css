@@ -577,7 +577,7 @@ td kbd:hover, td kbd:hover::before, td kbd:hover::after {
 
 .floater {
   display: none;
-  width: 100px;
+  width: 130px;
   border: 1px solid #D5DAE0;
   border-radius: 4px;
   padding: 11px 15px;
