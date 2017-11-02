@@ -51,6 +51,7 @@ function multiPopup(){
     layer2(0);
   });
 
+
   $('.reclaim').click(function() {
     $('.popup').addClass('second');
     layer2(1);
@@ -58,7 +59,6 @@ function multiPopup(){
     cardData.cardBody[1] += 40000;
     $('.card:eq(1) h4').text(cardData.cardBody[1]);
     $('aside h4').text(`${cardData.cardBody[1]} CCUs Available`);
-
   });
 }
 
@@ -98,21 +98,23 @@ function popupContent(i){
 function popAnimate(){
   window.scroll(0, 0);
   $('.overlay').css('opacity','1');
+
   $('html').css('overflow','hidden');
   setTimeout(function(){
     $('.popup').addClass('appear');
   },200);
 
-  $('.popup-header, .save, .cancel').click(function(){
-      $('.popup').addClass('disappear');
-      $('.overlay').fadeOut();
-      $('.overlay').removeClass('show');
-      $('html').css('overflow','');
-      setTimeout(function(){
-        $('.overlay').remove();
-      },400);
-    }
-  );
+
+
+  $('.popup-header, .cancel').click(function(){
+    $('.popup').addClass('disappear');
+    $('.overlay').fadeOut();
+    $('.overlay').removeClass('show');
+    $('html').css('overflow','');
+    setTimeout(function(){
+      $('.overlay').remove();
+    },400);
+  });
 }
 
 
@@ -206,7 +208,6 @@ function dropDown(){
 
 //counter
 function countNumbers(){
-
   $('.layer2 .popup-body').before(`<div class='banner'>4000 CCUs have been credited to your account.</div>`);
   $('.banner').toggle();
   $('.money').css('color','#18BE5F');
@@ -234,17 +235,38 @@ function countNumbers(){
     },300);
 
   },7000);
-
 }
+
+
+function countNumbers2(){
+  $('.layer2 .popup-body').before(`<div class='banner-info'>Capacity changes detected, licensing costs have been adjusted.        <span class=' tooltip-trigger3'>Why?</span></div>`);
+  $('.banner-info').toggle();
+
+  $('.popup-header').css('border-bottom','none');
+
+  setTimeout(function(){
+    $('.banner-info').slideDown();
+  },800);
+}
+
 
 $(document).ready(function() {
   cardsData();
   sideBarSelection();
   tableData();
   dropDown();
-  $('.reclaim-popup').click(function(){
-    popupContent(1);
-  });
+  $('.reclaim-popup').click(function(){popupContent(1)});
   $('.cluster-license').click(function(){popupContent(0)});
+  $('.update-popup').click(function(){
+    popupContent(0);
+    $('.popup-footer').remove();
+    $('.popup-body').after(`<div class="popup-footer">${popupData.footer[5]}</div>`);
+    $('.add-node').click(function() {
+      $('.popup').addClass('second');
+      layer2(0);
+      countNumbers2();
+    $('.popup-header').text('License new hardware');
+    });
 
+  });
 });

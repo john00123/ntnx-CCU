@@ -5,7 +5,7 @@ const popupData ={
   title :[
     'License Cluster',
     'Reclaim CCUs',
-    'Reclaim',
+    'Next Steps',
     'CCUs Reclaimed'
   ],
 
@@ -51,29 +51,8 @@ const popupData ={
 
     // change plan
     `
-    <div class="section1">
-      <h1>
-      <input type='radio' class='radio'checked="checked"> Pay as you go plan. <code style="  margin-left: 10px;">Current Plan</code>
-
-      </h1>
-      <p>Pay only for what you use, reducing the risk or overprovisioning or missing capacity.</p>
-
-      <div class='separator'></div>
-
-      <h1>
-      <input type='radio'  class='radio' > Minimum Commitment
-      </h1>
-      <p style="margin-bottom:20px;">Select an ammount for your minimum commitment plan.</p>
-
-      <label>Select Term & ammount per month</label><br>
-      <div class='upload-file'>
-        <input class='min-commit-val' style="margin:10px 0; border-radius:4px 0 0 4px;" type='number'  placeholder="$2000.00" step="1000.00">
-        <select class='term'>
-        <option>3 years</option>
-        <option>1 year</option>
-        </select>
-      </div>
-    </div>
+    <h2>Congratulations</h2>
+    <p> You have successfully made changes on this cluster's licenses. A new cluster summary file is been downloaded, use this file to update the license state of your cluster.</p> 
       `,
   ],
 
@@ -82,12 +61,14 @@ const popupData ={
 
     `<button class="primary reclaim btn-disabled">Reclaim</button>`,
 
-    `<button class="primary save">Save</button>`,
+    `<button class="secondary cancel" style="margin-right:0"> Done </button>`,
 
     `<button class="secondary cancel"> Cancel </button>
-     <button class="primary save"> Save Changes </button>`,
+     <button class="primary congrats"> Save Changes </button>`,
 
     `<button class="secondary cancel" style="margin-right:0"> Done </button>`,
+
+    `<button class="primary add-node btn-disabled">Next</button>`,
   ]
 }
 
@@ -100,8 +81,10 @@ const layer2Data = {
       <div class="popup-body panels">
 
         <div class='panel1'>
-        <p style='margin-bottom:20px;'> Licensing costs have been calculated based on cluster capacity <code class='tooltip-trigger'> See capacity </code></p>
+        <p style='margin-bottom:20px; margin-top:-3px; color:#22272E'> Licensing costs have been calculated based on <kbd class='tooltip-trigger'>cluster's capacity </kbd></p>
+
         <h4 style='margin-bottom:15px;'>Acropolis License </h4>
+
           <div class='license-pair'>
 
             <input
@@ -154,11 +137,12 @@ const layer2Data = {
         </div>
 
         <div class='panel2'>
-          <h3 mar> CCUs required</h3>
+          <h3 style='margin-bottom:19px;''>Cluster licensing costs in <kbd class='tooltip-trigger2'>CCUs </kbd></h3>
 
           <div class=flexbox-stretch>
             <kbd>${licensePrices[0].key}</kbd> <code>${licensePrices[0].price}</code>
           </div>
+
 
           <div class='separator prices'></div>
 
@@ -171,10 +155,10 @@ const layer2Data = {
             <kbd>Available</kbd>
             <code class='av'>${cardData.cardBody[1]} </code>
           </div>
+              <div class='grower'></div>
+          <div class='separator' style='margin-top:0px;'></div>
 
-          <div class='separator'></div>
-
-          <p> * Valid until Dec 12 2020 <br>based on CCU expiration dates.</p>
+          <p>Licensed until 12/12/20<br>based on CCU validity dates.</p>
         </div>
 
       </div>
@@ -184,7 +168,11 @@ const layer2Data = {
 
 `
   <div class="popup-header">${popupData.title[3]}</div>
-  <div class="popup-body"> <h3> You have reclaimed all the unused CCUs available on this cluster </h3><span class='count money'>4000</span></div>
+  <div class="popup-body">
+    <span class='count money'>4000</span>
+    <p style='margin-bottom:20px;'> Their expiration date is 12/12/2020</p>
+    <h3> You have reclaimed all the unused CCUs available on this cluster, and has been acredited to your account.</h3>
+  </div>
   <div class="popup-footer">${popupData.footer[4]}</div>
 `,
 
@@ -217,4 +205,14 @@ function layer2(i){
   CheckoutData();
   CheckoutData2();
   CheckoutData3()
+
+  $('.congrats').click(function(){
+    $('.popup').addClass('disappear');
+    $('.overlay').removeClass('show');
+    $('html').css('overflow','');
+    setTimeout(function(){
+      $('.overlay').fadeOut('slow');
+      setTimeout(function(){popupContent(2).fadeIn();},200);
+    },600);
+  });
 }

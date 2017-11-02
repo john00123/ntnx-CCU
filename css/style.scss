@@ -120,6 +120,7 @@ h4{
   }
 }
 
+
 span{
   line-height: 10px;
   height: 10px;
@@ -199,6 +200,108 @@ header {
 .btn-disabled{
   pointer-events: none;
   opacity: 0.3;
+}
+
+.grower{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 2;
+  z-index: 20px;
+}
+
+.banner-info{
+  background-color: $light-blue-3;
+  color:$dark-blue-2;
+  @include size(40px, 100%);
+  @include flex(center,'','');
+  padding:8px 20px;
+  line-height: 10px;
+  font-weight: 400;
+  z-index: 1;
+  white-space: pre-wrap;
+}
+
+.tooltip-trigger{
+  position: relative;
+  width: 92px;
+  text-align: left;
+  color:$blue-1;
+  border-bottom: 1px dotted $blue-1;
+  &:hover{
+  cursor: default;
+  }
+
+  &::before, &::after{
+    font-size: 12px;
+    opacity: 0;
+    z-index: 20;
+    pointer-events: none;
+  }
+
+
+  &::before{
+  position: absolute;
+  @include shadow;
+
+  content:
+  "Total Sockets         100\A
+  Total HDD             200\A
+  Totla SSD              300 ";
+  color:white;
+  background-color: $background-color-1;
+  padding: 15px;
+  width: 120px;
+
+  left: 0px;
+  top: 23px;
+  margin-top: -1px;
+  border-radius: 4px;
+    white-space: pre-wrap;
+  }
+
+  &::after{
+    content: '';
+    position: absolute;
+    top:20px;
+    transform: rotate(45deg) scale(0.8);
+    border-radius: 1.5px;
+    left: 15px;
+    background-color: $background-color-1;
+    height: 10px;
+    width: 10px;
+    display: block;
+  }
+
+  &:hover::after, &:hover::before{
+  opacity: 1; }
+}
+
+
+.tooltip-trigger2{
+  @extend .tooltip-trigger;
+    &::before{
+      content:"CCU is a license  \A
+      currency\A
+      across product our portfolio offerings";
+      left: -120px;
+    }
+}
+
+.tooltip-trigger3{
+  @extend .tooltip-trigger;
+
+  position: relative;
+  width: auto;
+  text-align: right;
+  color:$dark-blue-2;
+  border-bottom: 1px dotted $dark-blue-2;
+    &::before{
+      content:"3 new nodes were added to this cluster";
+      line-height: 1.2;
+      left: -120px;
+      text-align: left;
+    }
 }
 
 .actions-dropdown{
@@ -556,6 +659,11 @@ Popup
     width: 100%;
   }
 
+  h2{
+    font:$h2;
+    margin-bottom: 30px;
+  }
+
   h3{
     font: $h3;
     line-height: 1.5;
@@ -693,6 +801,10 @@ Popup
     @include size(330px, 200px);
     min-height: 250px;
     padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: flex-start;
     background-color: $background-color-3;
 
     p{
@@ -705,6 +817,10 @@ Popup
       flex-grow: 1;
       text-align: right;
       background-color: inherit;
+    }
+
+    .flexbox-stretch{
+      flex-grow: 0;
     }
 
     h4{

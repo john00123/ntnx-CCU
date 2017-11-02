@@ -300,6 +300,102 @@ header .right {
   opacity: 0.3;
 }
 
+.grower {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-shrink: 2;
+  z-index: 20px;
+}
+
+.banner-info {
+  background-color: #e9f6fe;
+  color: #1b6dc6;
+  height: 40px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: "";
+  flex-direction: "";
+  padding: 8px 20px;
+  line-height: 10px;
+  font-weight: 400;
+  z-index: 1;
+  white-space: pre-wrap;
+}
+
+.tooltip-trigger, .tooltip-trigger2, .tooltip-trigger3 {
+  position: relative;
+  width: 92px;
+  text-align: left;
+  color: #22A5F7;
+  border-bottom: 1px dotted #22A5F7;
+}
+
+.tooltip-trigger:hover, .tooltip-trigger2:hover, .tooltip-trigger3:hover {
+  cursor: default;
+}
+
+.tooltip-trigger::before, .tooltip-trigger2::before, .tooltip-trigger3::before, .tooltip-trigger::after, .tooltip-trigger2::after, .tooltip-trigger3::after {
+  font-size: 12px;
+  opacity: 0;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.tooltip-trigger::before, .tooltip-trigger2::before, .tooltip-trigger3::before {
+  position: absolute;
+  box-shadow: 0 9px 9px 0 rgba(0, 0, 0, 0.02), 0 3px 3px 0 rgba(0, 0, 0, 0.02), 0 1px 1px 0 rgba(0, 0, 0, 0.02);
+  content: "Total Sockets         100\A Total HDD             200\A Totla SSD              300 ";
+  color: white;
+  background-color: #22272E;
+  padding: 15px;
+  width: 120px;
+  left: 0px;
+  top: 23px;
+  margin-top: -1px;
+  border-radius: 4px;
+  white-space: pre-wrap;
+}
+
+.tooltip-trigger::after, .tooltip-trigger2::after, .tooltip-trigger3::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  transform: rotate(45deg) scale(0.8);
+  border-radius: 1.5px;
+  left: 15px;
+  background-color: #22272E;
+  height: 10px;
+  width: 10px;
+  display: block;
+}
+
+.tooltip-trigger:hover::after, .tooltip-trigger2:hover::after, .tooltip-trigger3:hover::after, .tooltip-trigger:hover::before, .tooltip-trigger2:hover::before, .tooltip-trigger3:hover::before {
+  opacity: 1;
+}
+
+.tooltip-trigger2::before {
+  content: "CCU is a license  \A currency\A across product our portfolio offerings";
+  left: -120px;
+}
+
+.tooltip-trigger3 {
+  position: relative;
+  width: auto;
+  text-align: right;
+  color: #1b6dc6;
+  border-bottom: 1px dotted #1b6dc6;
+}
+
+.tooltip-trigger3::before {
+  content: "3 new nodes were added to this cluster";
+  line-height: 1.2;
+  left: -120px;
+  text-align: left;
+}
+
 .actions-dropdown {
   position: relative;
   width: 92px;
@@ -792,6 +888,11 @@ Popup
   width: 100%;
 }
 
+.popup-body h2 {
+  font: 400 18px/12px "nutanix_soft", san-serif;
+  margin-bottom: 30px;
+}
+
 .popup-body h3 {
   font: 500 14px/10px "nutanix_soft", san-serif;
   line-height: 1.5;
@@ -1040,6 +1141,10 @@ Popup
   box-sizing: border-box;
   min-height: 250px;
   padding: 25px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   background-color: #F2F4F6;
 }
 
@@ -1053,6 +1158,10 @@ Popup
   flex-grow: 1;
   text-align: right;
   background-color: inherit;
+}
+
+.panels .panel2 .flexbox-stretch {
+  flex-grow: 0;
 }
 
 .panels .panel2 h4 {
