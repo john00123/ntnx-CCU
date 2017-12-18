@@ -1,7 +1,7 @@
 const popups ={
   body:{
     license:
-    `<img src='/img/Notice.svg'></img>
+    `<img src='img/Notice.svg'></img>
     <h3>New licensing model</h3>
     <p>Nutanix now allows you to license hardware based on its capacity. We hope you enjoy this new licensing model.<br><br><a>Learn more</a></p>`,
 
